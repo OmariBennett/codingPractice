@@ -1,0 +1,19 @@
+{
+  "name": "codingpractice",
+  "version": "1.0.0",
+  "description": "JavaScript - Exercises, Practice, Solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmariBennett/codingPractice.git"
+  },
+  "author": "Omari Bennnett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OmariBennett/codingPractice/issues"
+  },
+  "homepage": "https://github.com/OmariBennett/codingPractice#readme"
+}
