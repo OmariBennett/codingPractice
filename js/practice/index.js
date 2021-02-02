@@ -44,6 +44,7 @@ let currentHour = currentDate.getHours();
 let currentMinutes = currentDate.getMinutes();
 let currentSeconds = currentDate.getSeconds();
 let meridiem = currentHour > 12 ? 'PM' : 'AM';
+let twentyFourHourTime = currentHour > 12 ? currentHour - 12 : currentHour;
 let daysOfTheWeek = [
 	'Sun',
 	'Mon',
@@ -59,41 +60,12 @@ let daysOfTheWeek = [
 // Get hour new Date().getHours() - 12
 // Get mintues new Date().getMinutes()
 // Get seconds new Date().getSeconds()
-`Today is : ${daysOfTheWeek[currentDay]}day.${'\n'}Current time is : ${
-	currentHour - 12
-} ${meridiem} : ${currentMinutes}: ${currentSeconds}`;
+// `Today is : ${daysOfTheWeek[currentDay]}day.${'\n'}Current time is : ${
+// 	currentHour - 12
+// } ${meridiem} : ${currentMinutes}: ${currentSeconds}`;
 
 // *todo 3. _Pseudocode_
 console.log(`Today is : ${daysOfTheWeek[currentDay]}day.`);
 console.log(
-	`Current time is : ${
-		currentHour - 12
-	} ${meridiem} : ${currentMinutes}: ${currentSeconds}`,
+	`Current time is : ${twentyFourHourTime} ${meridiem} : ${currentMinutes}: ${currentSeconds}`,
 );
-
-//? ====================================================================================================================================================
-
-// ? 2. Write a JavaScript program to print the contents of the current window
-
-//? ====================================================================================================================================================
-// *todo 1. _Identify_ - the first step is to identify and understand the nature of the problem
-// <p>Click button to display currnet time.</p>
-// <button>click me!</button>
-// <p>
-//   Today is : Monday.
-//   Current time is : 7 PM : 15: 1
-// </p>
-
-// *todo 2.  _Research & Refine_
-//Create a 'p' node element
-//append element to document body
-
-//Create a 'button' node element
-//append element to p node element
-
-//f() 'click' button to display current time
-
-//Create a 'p' node element
-//append element to document
-
-// *todo 3. _Pseudocode_
