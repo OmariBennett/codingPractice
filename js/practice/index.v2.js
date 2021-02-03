@@ -37,3 +37,46 @@
 // ? mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
 
 //? ====================================================================================================================================================
+
+// *todo 1. _Identify_
+// Display mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+// *todo 2.  _Research & Refine_
+// Get Month 0 - 11 (Jan - Dec) .getMonth()
+// Get Month 0 - 11 (Jan - Dec) .getDay()
+// Get Year ####  .getFullYear()
+
+// *todo 3. _Pseudocode_
+let date = new Date(),
+	month = date.getMonth() + 10,
+	currentMonth = month <= 9 ? `0${month}` : month,
+	day = date.getDay(),
+	currenDay = day <= 9 ? `0${day}` : day,
+	year = date.getFullYear();
+
+console.log(`Output option mm/dd/yyyy: ${currentMonth}/${currenDay}/${year}`);
+// console.log(`Output option mm-dd-yyyy: ${currentMonth}-${currenDay}-${year}`);
+// console.log(`Output option dd-mm-yyyy: ${currenDay}-${currentMonth}-${year}`);
+// console.log(`Output option dd/mm/yyyy: ${currenDay}/${currentMonth}/${year}`);
+
+//? ====================================================================================================================================================
+
+// ? 4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.
+
+//? ====================================================================================================================================================
+
+// *todo 1. _Identify_
+// Area of a triangle: Area = 1/2 b * h
+// Using heron's formula to find the area of a triangle
+// Math.sqrt()
+
+// *todo 2.  _Research & Refine_
+function areaOfATriangle(a, b, c) {
+	return (a + b + c) / 2;
+}
+function heronFormula(a, b, c) {
+	let s = areaOfATriangle(a, b, c);
+	return Math.sqrt(s * (s - a) * (s - b) * (s - c)).toFixed(2);
+}
+
+console.log(heronFormula(10, 5, 7));
+// *todo 3. _Pseudocode_
