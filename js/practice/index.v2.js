@@ -7,7 +7,7 @@
 // *todo 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
 
 // *todo 3. _Pseudocode_
-// * - focus on logic, NOT syntax
+// * - focus on logic, NOT syntayear
 
 // * - added benefit of writing pseudocode is that you can focus naming things before your code gets filled up with a bunch of other syntax
 
@@ -169,3 +169,33 @@ console.log(
 // ? 7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
 
 //? ====================================================================================================================================================
+// *todo 1. _Identify_ - the first step is to identify and understand the nature of the problem
+
+// *todo 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
+// new Date(`January 1, 2014`).getDay() === 0)
+
+// *todo 3. _Pseudocode_
+
+function isJanFristOnSaturday() {
+	let array = [];
+	for (let i = 14; i <= 50; i++) {
+		if (new Date(`January 1, 20${i}`).getDay() === 0) array.push(i);
+	}
+	return console.log(
+		`Anwser 7: The years that start with Sunday January 1, are ${array}`,
+	);
+}
+
+isJanFristOnSaturday();
+
+//? ====================================================================================================================================================
+
+// ? 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number.
+// ? If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".
+
+//? ====================================================================================================================================================
+// *todo 1. _Identify_ - the first step is to identify and understand the nature of the problem
+
+// *todo 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
+
+// *todo 3. _Pseudocode_
