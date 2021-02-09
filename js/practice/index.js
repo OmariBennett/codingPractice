@@ -45,15 +45,7 @@ let currentMinutes = currentDate.getMinutes();
 let currentSeconds = currentDate.getSeconds();
 let meridiem = currentHour > 12 ? 'PM' : 'AM';
 let twentyFourHourTime = currentHour > 12 ? currentHour - 12 : currentHour;
-let daysOfTheWeek = [
-	'Sun',
-	'Mon',
-	'Tuesday',
-	'Wednes',
-	'Thurs',
-	'Fri',
-	'Satur',
-];
+let daysOfTheWeek = ['Sun', 'Mon', 'Tues', 'Wednes', 'Thurs', 'Fri', 'Satur'];
 
 // *todo 2.  _Research & Refine_
 // Days of the week 0 - 6 === Sun - Sat new Date().getDay()
