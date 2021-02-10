@@ -94,28 +94,3 @@ function handleClick(e) {
 }
 
 inputQuestion.addEventListener('keyup', handleClick);
-
-//? ====================================================================================================================================================
-
-// ? 9. Write a JavaScript program to calculate days left until next Christmas.
-
-//? ====================================================================================================================================================
-// *todo 1. _Identify_ - the first step is to identify and understand the nature of the problem
-// Calculate days left until NEXT Chrismas
-// Get today's date
-// Get Chrismas date
-// Print to the console
-// *todo 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
-// * Today's date = new Date()
-// -- Get Month
-// -- Get Day
-// -- Get Year
-// * Chrismas date = new Date(2021, 11, 25) or new Date('Decmeber 25, 2021')
-// -- Set Month
-// -- Set Day
-// -- Set Year
-// * Calculate the NEXT Chrismas date
-// -- if(today >= decmeber 25 ) check for next year Chrismas date
-// -- else check for this year Chrismas date
-// * Print to the console
-// *todo 3. _Pseudocode_
