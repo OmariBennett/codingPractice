@@ -31,18 +31,18 @@
 
 //? ====================================================================================================================================================
 // *todo 1. _Identify_ - the first step is to identify and understand the nature of the problem
-// Calculate days left until NEXT Chrismas
+// Calculate days left until NEXT Christmas
 // Get today's date
-// Get Chrismas date
+// Get Christmas date
 // Print to the console
 // *todo 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
 // * Today's date = new Date()
 // -- Get this month
 // -- Get this day
-// * Chrismas date = new Date(2021, 11, 25) or new Date('Decmeber 25, 2021')
+// * Christmas date = new Date(2021, 11, 25) or new Date('Decmeber 25, 2021')
 // -- Set this month
 // -- Set this day
-// * Calculate the NEXT Chrismas date
+// * Calculate the NEXT Christmas date
 // -- this month & day - Dec, 25
 // ?  Months with 30 days
 //     April 3
@@ -63,55 +63,61 @@
 // * Print to the console
 // *todo 3. _Pseudocode_
 
-function calculateNextChristmas() {
-	let today = new Date();
-	let currentMonth = today.getMonth();
-	let currentYear = today.getFullYear();
-	let currentDay = today.getDate();
-	let untilNextChristmas = 0;
-	let christmas = 25 - currentDay - 1;
-	// let currentMonth = 11;
-	// let currentMonth = 6;
-	// let currentDay = 26;
-
-	if (currentMonth === 11 && currentDay >= 26) {
-		// console.log(30 - currentDay) calculate for Next YEARS Christmas
-		return;
-	}
-
-	if (currentMonth === 11) {
-		untilNextChristmas += christmas;
-		return console.log({ untilNextChristmas });
-	}
-
-	for (let i = currentMonth; i <= 11; i++) {
-		// Calculate for month of February
-		if (i === 1) {
-			leapyear(currentYear)
-				? (untilNextChristmas += 29)
-				: (untilNextChristmas += 28);
-		}
-
-		// Calculate months with 30 days
-		if (i === 3 || i === 5 || i === 8 || i === 10) {
-			untilNextChristmas += 30;
-		}
-
-		// Calculate  months with 31 days
-		if (i === 0 || i === 2 || i === 4 || i === 6 || i === 7 || i === 9) {
-			untilNextChristmas += 31;
-		}
-
-		if (i === 11) {
-			untilNextChristmas += christmas;
-		}
-	}
-	console.log({ untilNextChristmas });
-}
+let today = new Date(),
+	currentMonth = today.getMonth(),
+	currentYear = today.getFullYear(),
+	currentDay = today.getDate(),
+	untilNextChristmas = 0,
+	christmas = 25 - currentDay - 1;
 
 function leapyear(year) {
 	return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
 }
 
-// console.log(leapyear(2021));
+function calculateThirtyDayMonths(i) {
+	// Calculate months with 30 days
+	if (i === 3 || i === 5 || i === 8 || i === 10) {
+		untilNextChristmas += 30;
+	}
+}
+
+function calculateThirtyOneDayMonths(i) {
+	// Calculate  months with 31 days
+	if (i === 0 || i === 2 || i === 4 || i === 6 || i === 7 || i === 9) {
+		untilNextChristmas += 31;
+	}
+}
+
+function calculateFebruary(i) {
+	// Calculate for month of February
+	if (i === 1) {
+		leapyear(currentYear)
+			? (untilNextChristmas += 29)
+			: (untilNextChristmas += 28);
+	}
+}
+
+// Calculate for the days in
+function calculateDecember(i) {
+	if (i === 11) {
+		untilNextChristmas += christmas;
+	}
+}
+
+function calculateNextChristmas() {
+	// Calculate days
+	if (currentMonth === 11 && currentDay >= 26) {
+		leapyear(currentYear + 1)
+			? (untilNextChristmas = currentDay + 366)
+			: (untilNextChristmas = currentDay + 365);
+		return console.log({ untilNextChristmas });
+	}
+	for (let i = currentMonth; i <= 11; i++) {
+		calculateThirtyDayMonths(i);
+		calculateThirtyOneDayMonths(i);
+		calculateFebruary(i);
+	}
+	console.log({ untilNextChristmas });
+}
+
 calculateNextChristmas();
