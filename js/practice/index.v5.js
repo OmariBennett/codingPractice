@@ -69,8 +69,7 @@
 // </form>
 
 // * 3. _Pseudocode_
-let subTitle = document.querySelector('h3');
-let form = document.createElement('form');
+let form = document.createElement('section');
 
 let containerDivOne = document.createElement('div'),
 	containerDivTwo = document.createElement('div');
@@ -114,7 +113,7 @@ function clearInput() {
 
 // *todo C. Make A Form
 function buildForm() {
-	subTitle.after(form);
+	document.querySelector('h3').after(form);
 	form.append(containerDivOne);
 	form.append(containerDivTwo);
 	form.append(multiplicationBtn);
@@ -157,7 +156,7 @@ initForm();
 
 //? ====================================================================================================================================================
 
-// ? 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.  Go to the editor
+// ? 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
 // ?     [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
 // ?     Expected Output :
 // ?     60°C is 140 °F
@@ -166,11 +165,136 @@ initForm();
 //? ====================================================================================================================================================
 
 // Problem Solving
-// If I had an hour to solve a problem I'd spend 55 minutes thinking about the problem and 5 minutes thinking about solutions." -Albert Einstein
-
-// Problem Solving Steps:
 // * 1. _Identify_ - the first step is to identify and understand the nature of the problem
+// [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
+// Convert Fahrenheit to Celsius
+// Convert Celsius to Fahrenheit
 
 // * 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
+// todo A. Get user input
+// todo -- 1. Sanitizer user input / parseInt()
+// todo B. Convert Fahrenheit to Celsius C = (F - 32) / 1.8
+// todo C. Convert Celsius to Fahrenheit F = 1.8(C) + 32
+// todo D. Print result to the screen
+// <main>
+// <label>A Temperatuer Converter:</label>
+// <input type='text'/>
+// <br/>
+// <input type='button' value='Fahrenheit to Celsius'/>
+// <input type='button' value='Celsius to Fahrenheit'/>
+// <p>result</p>
+// </main>
+// <></>
+// </>
+// * 3. _Pseudocode_
+// todo A. Get user input
+// todo -- 1. Sanitizer user input / parseInt()
 
+//// C. Convert Celsius to Fahrenheit F = 1.8(C) + 32
+function convertCelsiusToFahrenheit(C) {
+	return 1.8 * C + 32;
+}
+//// B. Convert Fahrenheit to Celsius C = (F - 32) / 1.8
+function convertFahrenheiTtoCelsius(F) {
+	return (F - 32) / 1.8;
+}
+
+function initializeTempertuerConverter() {
+	const converterDocument = document.createElement('section');
+	const converterLabel = document.createElement('label');
+	const temperatureInput = document.createElement('input');
+	const documentSpaceBreak = document.createElement('br');
+	const celsiusToFahrenheitBtn = document.createElement('input');
+	const fahrenheitToCelsiusBtn = document.createElement('input');
+	const converterResult = document.createElement('p');
+
+	// todo D. Print result to the screen
+	function initializeDocument() {
+		converterLabel.append(temperatureInput);
+		converterDocument.append(converterLabel);
+		converterLabel.after(documentSpaceBreak);
+		documentSpaceBreak.after(converterResult);
+		documentSpaceBreak.after(fahrenheitToCelsiusBtn);
+		documentSpaceBreak.after(celsiusToFahrenheitBtn);
+		document.querySelector('h3').after(converterDocument);
+		return;
+	}
+
+	function displayConverterLabel() {
+		temperatureInput.type = 'text';
+		converterLabel.innerText = 'A Temperatuer Converter: ';
+		return;
+	}
+
+	function displayConverterBtn() {
+		celsiusToFahrenheitBtn.value = 'Celsius To Fahrenheit';
+		celsiusToFahrenheitBtn.type = 'button';
+		fahrenheitToCelsiusBtn.value = 'Fahrenheit to Celsius';
+		fahrenheitToCelsiusBtn.type = 'button';
+		return;
+	}
+
+	function displayconverterResult(option) {
+		let userinput = parseInt(temperatureInput.value);
+		let result = option
+			? convertCelsiusToFahrenheit(userinput)
+			: convertFahrenheiTtoCelsius(userinput);
+
+		if (option) {
+			clearLable();
+			converterResult.innerText = `${userinput} Celsius = ${result}° Fahrenheit`;
+		} else {
+			clearLable();
+			converterResult.innerText = `${userinput}° Fahrenheit = ${result} Celsius`;
+		}
+		return;
+	}
+
+	function clearLable() {
+		return (temperatureInput.value = '');
+	}
+
+	displayConverterLabel();
+	displayConverterBtn();
+	initializeDocument();
+	celsiusToFahrenheitBtn.addEventListener('click', () => {
+		displayconverterResult(true);
+		return;
+	});
+	fahrenheitToCelsiusBtn.addEventListener('click', () => {
+		displayconverterResult(false);
+		return;
+	});
+	return;
+}
+
+initializeTempertuerConverter();
+
+//? ====================================================================================================================================================
+
+// ? 12. Write a JavaScript program to get the website URL
+
+//? ====================================================================================================================================================
+
+// Problem Solving
+// * 1. _Identify_ - the first step is to identify and understand the nature of the problem
+// Get the website URL
+// * 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
+// todo A. Get the website URL = documen
+// * 3. _Pseudocode_
+//// A. Get the website URL = documen
+console.log(document.URL);
+
+//? ====================================================================================================================================================
+
+// ? 13. Write a JavaScript exercise to create a variable using a user-defined name.
+
+//? ====================================================================================================================================================
+
+// Problem Solving
+// * 1. _Identify_ - the first step is to identify and understand the nature of the problem
+// * 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
+// todo A.
+// <></>
+// </>
 // * 3. _Pseudocode_
