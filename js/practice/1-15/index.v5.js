@@ -280,10 +280,12 @@ initializeTempertuerConverter();
 // * 1. _Identify_ - the first step is to identify and understand the nature of the problem
 // Get the website URL
 // * 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
-// todo A. Get the website URL = documen
+// todo A. Get the website URL = document.URL
 // * 3. _Pseudocode_
-//// A. Get the website URL = documen
-console.log(document.URL);
+//// A. Get the website URL = document.URL
+let displayDocumentURL = document.createElement('p');
+document.querySelector('h3').after(displayDocumentURL);
+displayDocumentURL.innerText = `Anwser for question 11: ${document.URL}`;
 
 //? ====================================================================================================================================================
 
@@ -298,3 +300,19 @@ console.log(document.URL);
 // <></>
 // </>
 // * 3. _Pseudocode_
+var var_name = 'abcd';
+var n = 120;
+this[var_name] = n;
+console.log(this[var_name]);
+console.log(this);
+console.log(this.abcd);
+
+const VAR_NAME = 'myName';
+const VAR_VALUE = 'myValue';
+
+const obj = {
+	[VAR_NAME]: VAR_VALUE,
+};
+
+console.log(obj);
+console.log(obj[VAR_NAME]);
