@@ -187,14 +187,78 @@ function questionSeventeen() {
 }
 
 //? ====================================================================================================================================================
-
 // ? 18. Write a JavaScript program to check two given numbers and return true if one of the number is 50
 // ?		 or if their sum is 50.
+//? ====================================================================================================================================================
+// * Problem Solving Steps:
+// * 1. _Identify_ - the first step is to identify and understand the nature of the problem
+//			Check two given numbers and RETURN TRUE if one of the number is 50
+//			Or if their sum is 50
+// * 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
+// todo  Check two given numbers and RETURN TRUE if one of the number is 50
+// if( num1 === 50 || num2 === 50 ) return true
+// todo  Or if their sum is 50
+// if( sum === 50 ) return true
+// * 3. _Pseudocode_
+
+function questionEightteen() {
+	const sectionTag = document.createElement('section');
+	const question = document.createElement('p');
+	const labelOne = document.createElement('label');
+	const inputOne = document.createElement('input');
+	const labelTwo = document.createElement('label');
+	const inputTwo = document.createElement('input');
+	const inputButton = document.createElement('input');
+	const result = document.createElement('p');
+	const brTag = document.createElement('br');
+	const breakTag = document.createElement('br');
+
+	function questionEightteenAnwser(inputOne, inputTwo) {
+		const numberOne = parseInt(inputOne),
+			numberTwo = parseInt(inputTwo),
+			sum = numberOne + numberTwo;
+
+		if (numberOne === 50 || numberTwo === 50 || sum === 50) {
+			breakTag.after(result);
+			return (result.innerText = true);
+		} else {
+			return result.remove();
+		}
+	}
+
+	question.innerText =
+		'18. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.';
+
+	labelOne.innerText = 'Enter The First Number: ';
+	inputOne.type = 'text';
+	labelTwo.innerText = 'Enter The Second Number: ';
+	inputTwo.type = 'text';
+
+	inputButton.type = 'button';
+	inputButton.value = 'Submit';
+
+	startHere.after(sectionTag);
+	sectionTag.append(question);
+	question.after(labelOne);
+	labelOne.append(inputOne);
+	labelOne.after(brTag);
+	brTag.after(labelTwo);
+	labelTwo.append(inputTwo);
+	labelTwo.after(breakTag);
+	breakTag.after(inputButton);
+	return inputButton.addEventListener('click', () => {
+		questionEightteenAnwser(inputOne.value, inputTwo.value);
+	});
+}
+
+//? ====================================================================================================================================================
+// ? 19. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.
 //? ====================================================================================================================================================
 // * Problem Solving Steps:
 // * 1. _Identify_ - the first step is to identify and understand the nature of the problem
 // * 2.  _Research & Refine_ - at this step you should have a main problem broken down into a few subproblem
 // * 3. _Pseudocode_
 
+questionEightteen();
 questionSeventeen();
 questionSixteen();
